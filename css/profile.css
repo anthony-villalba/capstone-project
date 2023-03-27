@@ -1,0 +1,15 @@
+@import './mainStyle.css';
+.profile_bgImg {
+  background-image: linear-gradient(#6f42c1eb,#ffc107eb),url(../images/bg/bgSix.png);
+}
+.secFont {
+  font-family: noteworthy;
+  letter-spacing: 3px;
+}
+.profileDiv {
+  backdrop-filter: hue-rotate(180deg);
+  color: #f8f9fa!important;
+  padding: .5rem;
+  margin-bottom: .5rem;
+  background-color: transparent;
+}

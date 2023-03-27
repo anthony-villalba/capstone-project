@@ -1,0 +1,5 @@
+@import './mainStyle.css';
+.portfolio_bgImg {
+  background-image: linear-gradient(#6f42c1eb,#ffc107eb),url(../images/bg/bgThree.png);
+}
+
