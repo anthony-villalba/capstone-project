@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/css/bootstrap.min.css" integrity="sha512-T584yQ/tdRR5QwOpfvDfVQUidzfgc2339Lc8uBDtcp/wYu80d7jwBgAxbyMh0a9YM9F8N3tdErpFI8iaGx6x5g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/mainStyle.css">
+    <title>dreamSource-Home</title>
+  </head>
+  <body>
+    <div id="formsModal" class="modal fade">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title custFont text-dark">profile setup</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span></button>
+          </div>
+          <form class="modal-body p-5">
+            <fieldset class="form-group" id="fieldSet">
+              <div class="form-group row">
+                <label for="name" class="text-md-right col-md-2">user name:</label>
+                <div class="col-md-10 px-3 py-3">
+                  <input class="form-control form-control-sm" name="user" type="text" id="user" placeholder="your user name">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="email" class="text-md-right col-md-2">Email address:</label>
+                <div class="col-md-10 px-5 py-3">
+                  <input class="form-control form-control-sm" name="email" type="email" id="email" placeholder="Enter email">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="password" class="text-md-right col-md-2">password:</label>
+                <div class="col-md-10 px-5 py-3">
+                  <input class="form-control form-control-sm" name="password" type="password" id="password" placeholder="Enter password">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="bio" class="text-md-right col-md-2">about me:</label>
+                <div class="col-md-10 px-3 py-3">
+                  <textarea name="bio" class="form-control form-control-sm" type="text" id="bio"></textarea>
+                </div>
+              </div>
+              <button class="custBtn" id="button" type="submit">submit</button>
+            </fieldset>
+          </form>
+          <div class="modal-footer">
+            <button type="button" class="custBtn" data-dismiss="modal">Back</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="signIn" class="modal fade">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title custFont text-dark">sign in</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span></button>
+            </div>
+            <form class="modal-body p-5">
+              <fieldset class="form-group" >
+                <div class="form-group row">
+                  <label for="firstname" class="text-md-right col-md-2">user name:</label>
+                  <div class="col-md-10 px-3 py-3">
+                    <input class="form-control form-control-sm" type="text" id="userName" placeholder="user-name">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="email" class="text-md-right col-md-2">Email address:</label>
+                  <div class="col-md-10 px-5 py-3">
+                    <input class="form-control form-control-sm" type="email" id="signInEmail" placeholder="Enter email">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="password" class="text-md-right col-md-2">password:</label>
+                  <div class="col-md-10 px-3 py-3">
+                    <input class="form-control form-control-sm" type="password" id="signInPassword" placeholder="password">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="confirmationCode" class="text-md-right col-md-2">confirmation code:</label>
+                  <div class="col-md-10 px-3 py-3">
+                    <input class="form-control form-control-sm" type="password" id="confirmationCode" placeholder="confirmation code id">
+                  </div>
+                </div>
+                <button class="custBtn" id="signInBtn" type="submit">submit</button>
+              </fieldset>
+            </form>
+            <div class="modal-footer">
+              <button type="button" class="custBtn" data-dismiss="modal">Back</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <div class="site_container m-auto">
+      <header>
+        <nav class="navbar navbar-light bg-light navbar-expand-sm shadow custBorder" style="z-index:1;">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myTogglerNav" aria-controls="myTogglerNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a href="#" class="navbar-brand"><span class="fa fa-laptop-code mr-4"></span>Anthony M. Villalba</a>
+          <div class="navbar-collapse collapse" id="myTogglerNav">
+            <div class="navbar-nav ml-auto">
+              <button type="button" class="btn custBtn" data-toggle="modal" data-target="#formsModal">create profile</button>
+              <a class="nav-item nav-link btn btn-light mr-3 custTxt" href="html/portfolio.html">Portfolio</a>
+              <a class="nav-item nav-link btn btn-light mr-3 custTxt" href="html/about.html">About</a>
+              <a class="nav-item nav-link btn btn-light custTxt" href="html/profile.html">Profile Page</a>
+              <div class="dropdown text-center">
+                <button class="btn custBtn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span>Log in/out</span>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" data-toggle="modal" data-target="#signIn">Log in</a>
+                  <a class="dropdown-item" href="#" id="logOut">log out</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <div class="heroContainer main_bgImg row align-items-center text-center m-auto container-fluid">
+        <h2 class="custFont mx-auto pt-3">dreamSource&copy;</h2>
+        <p class="lead text-light px-4 col-11 m-auto">dreamSource&copy; is a platform to create a bucket list of things you wanna do, places you want to go, or who you wanna be...</p>
+        <a href="html/about.html" class="m-auto col-10"><button class="custBtn invertBtn">find out more</button></a>
+      </div>
+      <main class="container-fluid justify-content-center m-auto row">
+        <div class="border-bottom col-12 col-md-10 row justify-content-between">
+          <div class="col-12 col-md-5 text-center" id="rsBorder">
+            <img class="img-fluid img-thumbnail mt-4 p-3 rounded-circle" src="images/avatar/elephant.png" alt="elephant-img-avatar">
+            <p class="lead">Come &amp; check out the way profiles are set up on our site.</p>
+          </div>
+          <div class="col-12 col-md-6 text-center">
+            <p class="h2 mt-3">Explore</p>
+            <div class="pt-3 border-bottom">
+              <p class="h3">find what works for you</p>
+              <p class="lead">alot of people stop here to find a lil motivation, before setting up their own profiles.</p>
+            </div>
+            <div class="p-4">
+              <a href="html/profile.html"><button class="custBtn">look at some profiles</button></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-10 row justify-content-between border-bottom">
+          <div class="col-12 col-md-6 text-center">
+            <p class="h2 mt-3">Im a coder</p>
+            <div class="pt-3 border-bottom">
+              <p class="h3">check out my work</p>
+              <p class="lead">since joining TLM&copy;, ive created multiple projects utilizing html, css, jquery, bootstrap, javascript, that shows i can be apart of this world.</p>
+            </div>
+            <div class="p-4">
+              <a href="html/portfolio.html"><button class="custBtn">find out more</button></a>
+            </div>
+          </div>
+          <div class="col-12 col-md-5 text-center" id="lsBorder">
+            <img class="img-fluid img-thumbnail mt-4 p-3 rounded-circle" src="images/avatar/bird.png" alt="bird-img-avatar">
+            <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati cupiditate, enim magni, esse aperiam accusamus numquam neque illo sunt amet, perferendis expedita ipsa reprehenderit possimus sint laudantium quos quibusdam ullam!</p>
+          </div>
+        </div>    
+      </main>
+      <footer class="custBorder row justify-content-around mt-2">
+        <div class="col-12 col-md-3 text-center">
+          <p class="lead text-nowrap">anthony m. villalba</p>
+          <p class="text-muted">front-end coder<br>(HTML,CSS,JavaScript,<br>Jquery,Bootstrap)<br>.coding since 2018.<br><span class="custTxt">amVillalba@tlm.cloud</span></p>
+        </div>  
+        <div class="list-group col-12 col-md-4 flex-row align-items-center justify-content-center">
+          <a href="#" class="mr-2 badge badge-light"><img src="images/media/facebook.png" alt="facebook-logo"></a>
+          <a href="#" class="mr-2 badge badge-light"><img src="images/media/twitter.png" alt="twitter-logo"></a>
+          <a href="#" class="mr-2 badge badge-light"><img src="images/media/instagram.svg.png" alt="instagram-logo"></a>
+          <a href="#" class="mr-2 badge badge-light"><img src="images/media/linkedIn.png" alt="linkedIn-logo"></a>
+          <a href="#" class="badge badge-light"><img src="images/media/google+.png" alt="googlePlus-logo"></a>
+        </div>
+        <div class="col-12 col-md-3 p-4 d-flex flex-column text-center">
+          <a href="#" class="lead" style="color:var(--purple)">The Last Mile&copy;</a>
+          <p class="text-muted lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, voluptate!</p>
+        </div>
+      </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.3/js/bootstrap.min.js" integrity="sha512-8qmis31OQi6hIRgvkht0s6mCOittjMa9GMqtK9hes5iEQBQE/Ca6yGE5FsW36vyipGoWQswBj/QBm2JR086Rkw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   
+    <script src="js/db.js"></script>
+    <script src="js/userModel.js"></script>
+    <script src="js/form.js"></script>
+    <script src="js/signIn.js"></script>
+    <script src="js/style.js"></script>
+  </body>
+</html>
