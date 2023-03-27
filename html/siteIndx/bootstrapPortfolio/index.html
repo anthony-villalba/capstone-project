@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bootstrap-Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.tlm.cloud/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.tlm.cloud/fontawesome/5.15.2/css/all.css"
+        integrity="sha384-+2e4h68pmq1jygCMJInB7m4qQ8/KId/WkeL2Qcg3YjJqYqjtUV1hk6CZm3SM+I2V" crossorigin="anonymous">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        #Scroll {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            text-align: center;
+            cursor: pointer;
+            opacity: .6;
+        }
+    </style>
+</head>
+<!-- scrollspy stuff-->
+
+<body data-spy="scroll" data-target="#navbar-site" data-offset="80">
+
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top border-bottom shadow" id="navbar-site">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myTogglerNav"
+                aria-controls="myTogglerNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a href="#" class="navbar-brand"><span class="fa fa-laptop-code mr-4"></span>Anthony M. Villalba</a>
+            <div class="navbar-collapse collapse" id="myTogglerNav">
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-item nav-link btn btn-dark mr-3" href="#Portfolio">Portfolio</a>
+                    <a class="nav-item nav-link btn btn-dark mr-3" href="#About">About</a>
+                    <a class="nav-item nav-link btn btn-dark" href="#Contact-Me">Contact-Me</a>
+                </div><!-- navbar end -->
+            </div><!-- collapse end -->
+        </div><!-- container end -->
+    </nav><!-- nav end-->
+
+    <div class="container-fluid">
+
+        <div class="jumbotron jumbotron-fluid mb-0 bg-secondary">
+            <div class="container">
+                <div class="row pb-4 mb-4">
+                    <div class="col12 col-sm-6 m-auto">
+                        <img class="img-fluid rounded-circle bg-dark" src="./images/tlm-logo-inverted.png"
+                            alt="The Last Mile Logo">
+                    </div>
+                </div>
+                <div class="row pt-2 mb-2">
+                    <div class="col-12 col-sm-8 m-auto">
+                        <p class="display-4 text-white text-center">
+                            Anthony M. Villalba <br />TLM / Portfolio
+                        </p>
+                    </div>
+                </div>
+                <div class="row m2">
+                    <hr class="w-100 col-4 text-white bg-light mt-auto">
+                    <span class="col-2 text-center text-white h2"><i class="fa fa-star"></i></span>
+                    <hr class="w-100 col-4 bg-light mt-auto">
+                </div>
+                <div class="row pt-2 pb-4">
+                    <div class="col-12 col-sm-8 m-auto">
+                        <p class="lead text-white text-center mt-3">Web Developer - Software Engineer - Front-end Coder
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div><!-- hero content end -->
+
+        <div class="container-fluid mt-0 mb-4 pt-4" id="Portfolio">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="h1">Portfolio</p>
+                </div>
+            </div>
+            <div class="row m-4 pb-4">
+                <hr class="w-100 col-3  bg-dark mt-auto">
+                <span class="col-2 text-center text-dark h2"><i class="fa fa-star"></i></span>
+                <hr class="w-100 col-3 bg-dark mt-auto">
+            </div>
+            <div class="row bg-secondary">
+                <div class="col-12 col-md-4 p-2 border-dark">
+                    <img src="./images/california-pizza-kitchen.png" alt="caliPizzaKitchen" class="img-fluid p-2">
+                </div>
+                <div class="col-12 col-md-4 p-2 border-dark">
+                    <img src="./images/in-n-out.png" alt="in-n-out" class="img-fluid p-2">
+                </div>
+                <div class="col-12 col-md-4 p-2 border-dark">
+                    <img src="./images/instacart.png" alt="instacart" class="img-fluid p-2">
+                </div>
+            </div>
+            <div class="row bg-secondary">
+                <div class="col-12 col-md-4 p-2 border-dark">
+                    <img src="./images/rock-paper-scissors.png" alt="rockPaperScissors" class="img-fluid p-2">
+                </div>
+                <div class="col-12 col-md-4 p-2 border-dark">
+                    <img src="./images/styles-conference.png" alt="stylesConference" class="img-fluid p-2">
+                </div>
+                <div class="col-12 col-md-4 p-2 border-dark">
+                    <img src="./images/bootstrap.png" alt="bootstrap" class="img-fluid p-2">
+                </div>
+            </div>
+        </div><!-- portfolio end -->
+
+        <div class="container bg-dark" id="About">
+            <div class="row">
+                <div class="col-12 text-center text-light">
+                    <p class="h1 pt-4 mt-4">About-Me</p>
+                </div>
+            </div>
+            <div class="row m-4 pb-4">
+                <hr class="w-100 col-3  bg-light mt-auto">
+                <span class="col-2 text-center text-light h2"><i class="fa fa-star"></i></span>
+                <hr class="w-100 col-3 bg-light mt-auto">
+            </div>
+            <div class="row">
+                <div class="lead col-12 col-sm-5 m-2 text-light text-center">
+                    Receptive to learning. <br>
+                    Humble &amp; Hard-working. <br>
+                    Positive &amp; a changed person. <br>
+                    Villalba is focused &amp; driven to succeed. <br>
+                    Currently working toward AA degree in Business via Palo Verde College
+                </div>
+                <div class="lead col-12 col-sm-5 m-2 text-light text-center">
+                    Anthony has been a code-developer since 2018. <br>
+                    Developed into leader in the cohort &amp; enjoys helping others find their voice. <br>
+                    Anthony is invested in his personal goal of becoming a Full-stack web-developer. <br>
+                    Skilled in languages: HTML, CSS, Javascript, NodeJs, HandlebarsJs, Jquery, Bootstrap. <br>
+                    Currently learning: Front-end framework-React, &amp; MongoDB(server-side).<br>
+                </div>
+            </div>
+            <div class="row m4 p-2 m-auto text-center">
+                <button class="btn btn-light border-dark col-8 col-md-4 pr-4 m-auto"><span
+                        class="fa fa-download"></span> download this page</button>
+                <button class="btn btn-light border-dark col-8 col-md-4 m-auto mt-4"><span
+                        class="fa fa-download"></span> download this page in Xml</button>
+            </div>
+
+        </div><!-- About end -->
+
+        <div class="container" id="Contact-Me">
+            <div class="row mt-4">
+                <p class="h2 col-12 text-center">Contact-Me</p>
+            </div>
+            <div class="row m-4 pb-4">
+                <hr class="w-100 col-3  bg-dark mt-auto">
+                <span class="col-2 text-center h2"><i class="fa fa-star"></i></span>
+                <hr class="w-100 col-3 bg-dark mt-auto">
+            </div>
+            <form>
+                <fieldset class="form-group">
+                    <legend>Your Name</legend>
+                    <div class="form-group row">
+                        <label for="ownername" class="col-form-label text-md-right col-md-2">Owner</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="text" id="ownername" placeholder="Your Name">
+                        </div>
+                    </div><!-- form-group -->
+                    <div class="form-group row">
+                        <label for="usermail" class="col-form-label text-md-right col-md-2">Your Address</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="text" id="usermail" placeholder="Address">
+                        </div>
+                    </div><!-- form-group -->
+                    <div class="form-group form-row">
+                        <div class="form-group offset-md-2 col-auto">
+                            <label class="col-form-label sr-only" for="usercity">City</label>
+                            <input class="form-control" type="text" id="usercity" placeholder="City">
+                        </div><!-- form-group -->
+                        <div class="form-group col-auto">
+                            <label class="col-form-label sr-only" for="userzip">Zip</label>
+                            <input class="form-control" type="text" id="userzip" placeholder="Zip">
+                        </div><!-- form-group -->
+                    </div><!-- form-group -->
+                    <div class="form-group form-row">
+                        <label for="usere-mail" class="col-form-label text-md-right col-md-2">E-mail</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="text" id="usere-mail" placeholder="Email" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="offset-md-2 col-auto">
+                            <button class="btn btn-secondary" type="submit">Submit</button>
+                        </div>
+                    </div>
+                </fieldset><!-- fieldset -->
+            </form>
+        </div><!-- Contact-me end -->
+
+        <div class="bg-dark pt-4">
+            <div class="container-fluid row">
+                <ul class="list-group col-12 col-sm-4">
+                    <li class="bg-dark border-bottom border-sm-0 list-group-item lead text-white text-center">Anthony M.
+                        Villalba
+                        <hr class="m-0" /><br> Ironwood State Prison <br> Blythe, Ca. 92226</li>
+                </ul>
+                <div class="col-12 col-sm-4 w-100">
+                    <p class="lead text-center text-white">Contact Me Online</p>
+                    <hr>
+                    <ul class="navbar border-bottom border-sm-0 d-flex flex-row justify-content-between p-4">
+                        <li class="list-unstyled text-white"><span class="fa fa-smile"></span></a></li>
+                        <li class="list-unstyled text-white"><span class="fa fa-phone"></span></a></li>
+                        <li class="list-unstyled text-white"><span class="fa fa-pizza-slice"></span></a></li>
+                        <li class="list-unstyled text-white"><span class="fa fa-plane"></span></a></li>
+                        <li class="list-unstyled text-white"><span class="fa fa-satellite-dish"></span></a></li>
+                    </ul>
+                </div>
+                <ul class="w-100 list-group col-12 col-sm-4">
+                    <li class="bg-dark border-bottom border-sm-0 list-group-item lead text-white text-center">The Last
+                        Mile - Isp
+                        <hr class="m-0" /><br>Re-established in 2020. TLM's curriculum is the most prolific
+                        rehabilitation program in the country. <br> Alummni have gone on to be coders in the world. <br>
+                        TLM's recedivism rate is : 0.</li>
+                </ul>
+            </div>
+            <div class="row ">
+                <div class="col-12 bg-secondary text-center text-white p-4">Anthony M. Villalba &copy; copyright 2021
+                </div>
+            </div>
+        </div><!-- footer End-->
+
+        <button onclick="topFunction()" id="Scroll" title="Go to top" class="btn btn-dark"><i
+                class="fa fa-2x fa-arrow-up"></i></button>
+
+    </div><!-- content container -->
+
+    <script src="https://cdn.tlm.cloud/jquery/3.3.1/jquery-3.3.1.min.js"
+        integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.tlm.cloud/jqueryui/1.12.1/jquery-ui.min.js"
+        integrity="sha384-PtTRqvDhycIBU6x1wwIqnbDo8adeWIWP3AHmnrvccafo35E7oIvW7HPXn2YimvWu"
+        crossorigin="anonymous"></script>
+        <script src="https://cdn.tlm.cloud/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script>
+        $('a[href^="#"]').bind('click.smoothscroll', function (e) {
+            e.preventDefault();
+            var target = this.hash;
+            $target = $(target);
+
+            $('html, body').stop().animate({
+                'scrollTop': $target.offset().top
+            }, 1, 'swing', function () {
+                window.location.hash = target;
+            });
+        });
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                document.getElementById("Scroll").style.display = "block";
+            } else {
+                document.getElementById("Scroll").style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+
+</html>

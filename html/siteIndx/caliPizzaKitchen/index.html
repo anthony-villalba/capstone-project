@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>California Pizza Kitchen</title>
+    <style>
+        /* 
+            ================================
+            ------ universal selectors -------
+            =================================
+        */
+        *,
+        *:before,
+        *:after {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            text-align: center;
+        }
+
+        /* 
+            =================================
+            --------- layout for site -------
+            =================================
+        */
+        .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 200px 600px 0px 600px 200px 1100px 200px 300px;
+            margin: auto;
+        }
+
+        /* 
+            ===============================
+            ------- header placement ------
+            ===============================
+        */
+        .header {
+            grid-column: 1/2;
+            grid-row: 1/2;
+        }
+
+        /* 
+            =======================================
+            --------- nested grid container --------
+            ========================================
+        */
+        .smallLead {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            background: #ffdb00;
+            height: 1.3rem;
+        }
+
+        .smallLead h5 {
+            color: white;
+            font-weight: bold;
+            grid-column: 3/4;
+            padding-top: 3px;
+            letter-spacing: 1px;
+            text-transform: capitalize;
+        }
+
+        .smallLead img {
+            grid-column: 5/6;
+            height: 21px;
+            justify-self: right;
+        }
+
+        /* 
+            ================================================
+            ------ another nested grid to layout header --------
+            ================================================
+        */
+        .logoNav {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 100px 68px;
+            grid-gap: 0 5px;
+        }
+
+        /* 
+            =====================================================
+            ---------- to center bg img on header -----------
+            ===================================================
+        */
+        .logoNav span {
+            grid-column: 2/3;
+            grid-row: 1/2;
+            background-image: url('./CPK-images/logo.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+        }
+
+        .mediaNav {
+            grid-column: 3/4;
+            grid-row: 1/2;
+            padding: 26px 3px 0 0;
+            justify-content: space-between;
+        }
+
+        /* 
+            =======================================================
+            ------- using flex to align my nav in grid -----------------
+            =========================================================
+        */
+        .allLists {
+            display: flex;
+            flex-flow: row;
+            list-style-type: none;
+            justify-content: center;
+        }
+
+        .mediaNav a {
+            padding-left: 16px;
+            font-size: 12px;
+            text-transform: capitalize;
+            text-decoration: none;
+            color: gray;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .headerNavBar {
+            grid-column: 1/4;
+            grid-row: 2/3;
+            padding-top: 13px;
+        }
+
+        .headerNavBar li {
+            padding-left: 16px;
+        }
+
+        .headerNavBar img {
+            height: 12px;
+            width: 24px;
+        }
+
+        .headerNavBar a {
+            padding-left: 16px;
+            font-size: 24px;
+            text-transform: capitalize;
+            text-decoration: none;
+            color: #000000;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        /* 
+            =============================================================
+            --------- main's placement in the container & creating 
+            nested grid to layout items in main ------------------
+            ==============================================================
+        */
+        .main {
+            grid-column: 1/2;
+            grid-row: 2/3;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(7, 1fr);
+            background-image: url('./CPK-images/HomePage1_1920.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .squigglyText {
+            grid-column: 4/6;
+            grid-row: 4/6;
+            width: 75%;
+            margin: 0 auto;
+            color: white;
+            text-shadow: 0px 2px #888888;
+            letter-spacing: 1px;
+            font-size: 18px;
+            align-self: center;
+        }
+
+        .squigglyText img {
+            float: left;
+        }
+
+        .squigglyText h2 {
+            text-transform: uppercase;
+        }
+
+        .arrowBTN {
+            grid-column: 3/4;
+            grid-row: 7/8;
+            height: 85px;
+            background: #0003;
+            border-radius: 50px;
+            justify-self: center;
+        }
+
+        .mainDownloadIcon {
+            grid-column: 7/8;
+            grid-row: 7/8;
+            align-self: end;
+        }
+
+        /* 
+            =========================
+            --- site promo btn -----
+            =========================
+        */
+        .pizzaRewards {
+            grid-column: 1/2;
+            grid-row: 3/4;
+            z-index: 11;
+            text-align: left;
+            padding-left: 6%;
+            margin-top: -114px;
+        }
+
+        .pizzaRewards a img {
+            width: 230px;
+        }
+
+        /* 
+            ==========================================
+            -------- this section has the button
+            & uses nested grid format ----------
+            ===================================
+        */
+        .registerSignUp {
+            grid-column: 1/2;
+            grid-row: 4/5;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            background-image: url('./CPK-images/HomePage2_1920.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .registerSignUp div {
+            grid-column: 1/2;
+            grid-row: 2/4;
+            padding-top: 35px;
+            color: #dbc79d;
+            letter-spacing: 1px;
+            font-size: 24px;
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .registerSignUp h2 {
+            color: black;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .registerSignUp p {
+            text-shadow: 0px 1px #c5c5c5;
+            font-weight: 100;
+        }
+
+        .registerSignUp button {
+            font-size: 28px;
+            color: white;
+            text-shadow: 1px 1px #dbc79d;
+            letter-spacing: inherit;
+            background-color: black;
+            border: none;
+            padding: 5px 16px;
+            margin-top: 30px;
+            cursor: pointer;
+        }
+
+        .registerDL {
+            grid-column: 3/4;
+            grid-row: 5/6;
+            justify-self: end;
+            align-self: end;
+            padding-right: 15px;
+        }
+
+        /* 
+            ==============================
+            ----- article with text/img --------
+            ===============================
+        */
+        .container article {
+            grid-column: 1/2;
+            grid-row: 5/6;
+            align-self: center;
+        }
+
+        .container article img {
+            width: 100px;
+        }
+
+        .container article h2 {
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 30px;
+            font-weight: 400;
+        }
+
+        .container article p {
+            color: #cac8c9;
+            letter-spacing: 1px;
+        }
+
+        /* 
+            =======================================
+            ---------- image holder ---------------
+            =====================================
+        */
+        .gallery {
+            grid-column: 1/2;
+            grid-row: 6/7;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 600px 500px;
+            grid-gap: 10px;
+            max-width: 90%;
+            margin: auto;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .galleryPictureNumOne {
+            grid-column: 1/2;
+            grid-row: 1/2;
+        }
+
+        .galleryPictureNumTwo {
+            grid-column: 2/3;
+            grid-row: 1/2;
+        }
+
+        .galleryPictureNumThree {
+            grid-column: 1/3;
+            grid-row: 2/3;
+        }
+
+        /* 
+            ================================================
+            -------- site footer with nested grid ---------- 
+            ==================================================
+        */
+        .footer {
+            grid-column: 1/2;
+            grid-row: 8/9;
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            grid-template-rows: 200px 100px;
+            background-color: #f3f3f3;
+            color: #888888;
+        }
+
+        /* 
+        ==============================================
+        ------- use of flex to postition content -------
+        =============================================== 
+        */
+        .listHolder {
+            grid-column: 2/7;
+            grid-row: 1/2;
+            display: flex;
+            justify-content: space-between;
+            margin-top: auto;
+        }
+
+        .listHolder h3 {
+            font-weight: 400;
+            margin-bottom: 14px;
+        }
+
+        .listHolder nav {
+            text-transform: capitalize;
+        }
+
+        .listHolder nav ul {
+            list-style-type: none;
+            letter-spacing: .5px;
+            font-size: 14px;
+        }
+
+        .listHolder nav ul li a {
+            text-decoration: none;
+            color: #888888;
+            line-height: 24px;
+        }
+
+        .listHolder nav ul li a:hover {
+            color: #b1b1b1;
+        }
+
+        .footerNav {
+            grid-column: 1/8;
+            grid-row: 2/3;
+            background-color: #000000;
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+        }
+
+        .mediaHolderLinks {
+            grid-column: 2/7;
+            display: flex;
+        }
+
+        .footerNav nav {
+            text-transform: uppercase;
+            margin-top: 30px;
+            display: flex;
+        }
+
+        .footerNav nav ul {
+            list-style-type: none;
+            letter-spacing: 1px;
+            font-size: 10px;
+            display: flex;
+        }
+
+        .footerNav nav ul li {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .footerNav nav ul li a {
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        .footerNav nav ul li a:hover {
+            color: #dedede;
+        }
+
+        .storeImg {
+            width: 75px;
+            height: 24px;
+            margin-top: -8px;
+        }
+
+        .logosForSites {
+            height: 24px;
+            width: 28%;
+            overflow: hidden;
+            padding-left: 10px;
+        }
+
+        .logosForSites img {
+            height: 71px;
+        }
+
+        .download_arrowHolder {
+            grid-column: 7/8;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .arrow {
+            height: 30px;
+            grid-column: 3/4;
+            grid-row: 1/2;
+            margin-top: 30px;
+            align-self: end;
+            justify-self: end;
+            padding-right: 26px;
+        }
+
+        .downloadIcon {
+            grid-column: 3/4;
+            grid-row: 2/3;
+            height: 40px;
+            align-self: end;
+            justify-self: end;
+            padding-right: 15px;
+        }
+
+        /* 
+            =======================================================
+            ------- media queries to help  position elements ------
+            =======================================================
+        */
+        @media(max-width: 720px) {
+            .headerNavBar li {
+                padding-left: 5px;
+            }
+
+            .squigglyText {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        ======== this is my site's wrapper ==========
+     -->
+    <div class="container">
+        <!-- 
+            ======= this is the content in the header section of container =======
+         -->
+        <header class="header">
+            <span class="smallLead">
+                <h5>CPK park is now open</h5>
+                <img src="CPK-images/mobile_alert_close.gif" alt="">
+            </span>
+            <span class="logoNav">
+                <span></span>
+                <nav class="mediaNav">
+                    <ul class="allLists">
+                        <li><a href="#">join pizza dough &reg; rewards</a></li>
+                        <li><a href="#">my account</a></li>
+                    </ul>
+                </nav>
+                <nav class="headerNavBar">
+                    <ul class="allLists">
+                        <li><a href="#"><img src="CPK-images/down_arrow.png" alt="">menu</a></li>
+                        <li><a href="#"><img src="CPK-images/down_arrow.png" alt="">locations</a></li>
+                        <li><a href="#"><img src="CPK-images/down_arrow.png" alt="">caterings</a></li>
+                        <li><a href="#"><img src="CPK-images/down_arrow.png" alt="">gift cards</a></li>
+                        <li><a href="#"><img src="CPK-images/down_arrow.png" alt="">order online</a></li>
+                    </ul>
+                </nav>
+            </span>
+            <img src="CPK-images/colordash.jpg" alt="" class="colorDash">
+        </header>
+        <!-- 
+            ====== this is the main section and most visible on page ======
+         -->
+        <main class="main">
+            <div class="squigglyText">
+                <img src="CPK-images/white_squiggle.png" alt="squigglyMark">
+                <h2>roasted garlic chicken pizza</h2>
+                <p>
+                    sweet caramelized onions, fresh mozzerella, parmesan, slivered scallions and cracked black pepper
+
+                </p>
+            </div>
+            <img class="arrowBTN" src="CPK-images/back_to_top.png" alt="arrow">
+
+            <img class="mainDownloadIcon" src="CPK-images/download.png" alt="download">
+        </main>
+        <!-- 
+            ======= this is the span with pizza dough rewards link ========
+         -->
+        <span class="pizzaRewards">
+            <a href="#"><img src="CPK-images/pizzadough_reward.png" alt="rewardEmblem"></a>
+        </span>
+        <!-- 
+            ======= this is the section with the button ======
+         -->
+        <section class="registerSignUp">
+            <div>
+                <h2>join the club</h2>
+                <p>recieve a free small plate when you register</p>
+                <button>SIGN UP</button>
+            </div>
+            <img class="registerDL" src="CPK-images/download.png" alt="regDownload">
+        </section>
+        <!-- 
+            ======= the article section a of the site ========
+         -->
+        <article>
+            <img src="CPK-images/squigly.jpg" alt="squiglyLine">
+            <h2>seasonally inspired</h2>
+            <p>fresh flavors to celebrate each season</p>
+        </article>
+        <!-- 
+           ========== this is the img container on bottom ==========
+         -->
+        <div class="gallery">
+            <img src="CPK-images/home_seasonal_1.jpg" alt="cupOfJuice" class="galleryPictureNumOne">
+            <img src="CPK-images/home_seasonal_2.jpg" alt="plateOfFood" class="galleryPictureNumTwo">
+            <img src="CPK-images/home_seasonal_3.jpg" alt="threeCupsOfJuice" class="galleryPictureNumThree">
+        </div>
+        <!-- 
+            ========= the site footer ========
+         -->
+        <footer class="footer">
+            <div class="listHolder">
+                <nav>
+                    <h3>COMPANY</h3>
+                    <ul>
+                        <li><a href="#">about us</a></li>
+                        <li><a href="#">press room</a></li>
+                        <li><a href="#">CPK oven ready</a></li>
+                        <li><a href="#">CPKids &amp; fundraisers</a></li>
+                        <li><a href="#">inspired acts</a></li>
+                    </ul>
+                </nav>
+                <nav>
+                    <h3>REAL ESTATE</h3>
+                    <ul>
+                        <li><a href="#">domestic</a></li>
+                        <li><a href="#">international</a></li>
+                    </ul>
+                </nav>
+                <nav>
+                    <h3>CAREERS</h3>
+                    <ul>
+                        <li><a href="#">our culture</a></li>
+                        <li><a href="#">opportunities</a></li>
+                    </ul>
+                </nav>
+                <nav>
+                    <h3>FAQs</h3>
+                    <ul>
+                        <li><a href="#">general</a></li>
+                        <li><a href="#">menu &amp; ordering</a></li>
+                        <li><a href="#">gift cards</a></li>
+                        <li><a href="#">catering &amp; events</a></li>
+                    </ul>
+                </nav>
+                <nav>
+                    <h3>QUICK LINKS</h3>
+                    <ul>
+                        <li><a href="#">pizza dough &reg; rewards</a></li>
+                        <li><a href="#">allergen &amp; nutrition info</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <nav class="footerNav">
+                <div class="mediaHolderLinks">
+                    <nav>
+                        <ul>
+                            <li><a href="#">contact us</a></li>
+                            <li><a href="#">terms &amp; conditions</a></li>
+                            <li><a href="#">privacy policy</a></li>
+                        </ul>
+                        <img src="CPK-images/line.png" alt="">
+                    </nav>
+                    <nav>
+                        <ul>
+                            <li><a href="#">download the cpk app</a></li>
+                            <li><a href="#"><img class="storeImg" src="CPK-images/footer_app_store.png"
+                                        alt="appleAppStore"></a></li>
+                            <li><a href="#"><img class="storeImg" src="CPK-images/footer_google_play.png"
+                                        alt="googleAppStore"></a></li>
+                        </ul>
+                        <img src="CPK-images/line.png" alt="">
+                    </nav>
+                    <nav class="logosForSites">
+                        <img src="CPK-images/btn_30_sprites.png" alt="media">
+                    </nav>
+                </div>
+                <span class="download_arrowHolder">
+                    <img class="arrow" src="CPK-images/back_to_top.png" alt="">
+                    <img class="downloadIcon" src="CPK-images/download.png" alt="download">
+                </span>
+            </nav>
+        </footer>
+    </div>
+</body>
+
+</html>

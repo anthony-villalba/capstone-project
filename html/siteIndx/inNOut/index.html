@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>in-n-out</title>
+    <style>
+        /* ====================================
+        =======       universal       ========
+        =======================================*/
+        *,
+        *:before,
+        *:after {
+            margin: 0;
+        }
+
+        /* ===========================================================
+        =======        main container's layout using grid       ======
+        =============================================================*/
+        .container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: 96px auto;
+            height: 100vh;
+        }
+
+        /* ========================================
+        ======        header's layout       =======
+        ===========================================*/
+
+        .container>header {
+            grid-column: 1/6;
+            display: grid;
+            grid-template-columns: 200px 1fr 1fr 1fr;
+            background-image: url('./images/bg_topnav_repeat.png');
+            background-repeat: repeat;
+            z-index: 24;
+        }
+
+        /*=========================================
+        ========       header content     ========
+        =========================================== */
+        .container>header>img {
+            grid-column: 1/2;
+        }
+
+        .container>header>nav {
+            grid-column: 2/4;
+        }
+
+        .container>header>nav>ul {
+            display: flex;
+            flex-flow: row;
+            height: 45px;
+            overflow: hidden;
+            margin-top: 44px;
+        }
+
+        .container>header>nav>ul>span>li>a>img:hover {
+            overflow-y: visible;
+            margin-top: -43px;
+        }
+
+        .container>header>section {
+            grid-column: 4/5;
+        }
+
+        .container>header>section>.inputHolder {
+            display: flex;
+            flex-flow: row;
+            list-style-type: none;
+            height: 34px;
+            overflow: hidden;
+            margin-top: 50px;
+        }
+
+        .input {
+            height: 24px;
+            width: 170px;
+            font-style: italic;
+            font-weight: bold;
+            background-image: url('./images/bg_search_textbox_white.jpg');
+            background-repeat: no-repeat;
+            margin: 1px 5px 0 0;
+        }
+
+        .container>header>section>.inputHolder>.goButton {
+            width: 35px;
+            height: 60px;
+        }
+
+        .container>header>section>.inputHolder>li>a>.goButton:hover {
+            overflow-y: visible;
+            margin-top: -34px;
+        }
+
+        /*============================================
+        =======       main's layout           =======
+        ==============================================*/
+        .container>main {
+            grid-column: 1/6;
+            grid-row: 2/3;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 75px 400px 1fr;
+            background-image: url('./images/home_AnaheimHills.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding-top: 45px;
+            text-align: center;
+            z-index: 8;
+            margin-top: -45px;
+        }
+
+        /*===========================================
+        =========        main's content     =========
+        ============================================= */
+        .container>main>.mainSection {
+            grid-column: 3/4;
+            grid-row: 1/2;
+            width: 224px;
+            height: 57px;
+            display: flex;
+            flex-flow: column;
+            text-align: center;
+            color: white;
+            letter-spacing: 1px;
+            font-weight: bold;
+            font-family: system-ui;
+            background-image: url('./images/currentlyviewing_bg.png');
+            background-repeat: repeat;
+            background-color: #151618;
+            border-radius: 5px;
+            align-self: end;
+            justify-self: end;
+            margin-right: 13%;
+        }
+
+        .container>main>.mainSection>.viewHolder {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .container>main>.mainSection>.viewHolder>.locationText {
+            display: flex;
+            flex-flow: row;
+            padding-left: 17px;
+        }
+
+        .container>main>.mainSection>.viewHolder>.locationText>a {
+            padding-left: 40%;
+        }
+
+        .container>main>.mainNavicon {
+            grid-column: 1/4;
+            grid-row: 3/4;
+        }
+
+        .container>main>.mainNavicon>ul {
+            display: flex;
+            flex-flow: nowrap;
+            list-style-type: none;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .container>main>.mainNavicon>ul>li {
+            margin: 0 auto;
+        }
+
+        .container>main>.mainNavicon>ul>li:hover {
+            transform: scale(1.1);
+            transition: all 0.3s cubic-bezier(0.6, -0.28, 0.74, 0.05);
+        }
+
+        /*==========================================
+        =====       footer layout       ============
+        ============================================ */
+        .container>footer {
+            grid-column: 1/6;
+            grid-row: 4/5;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 27px 1fr;
+            /* margin-top: -45px; */
+            z-index: 22;
+        }
+
+        .container>footer>.miscInfo {
+            grid-column: 1/4;
+            grid-row: 1/2;
+            background-color: #c0241f;
+        }
+
+        .container>footer>.miscInfo>ul {
+            display: flex;
+            list-style-type: none;
+            margin-top: 5px;
+        }
+
+        .container>footer>.miscInfo>ul>span>li {
+            padding-left: 17px;
+        }
+
+        .container>footer>.miscInfo>ul>span>li>a {
+            color: white;
+            text-decoration: none;
+            font-family: sans-serif;
+            font-weight: 400;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+
+        .container>footer>.miscInfo>ul>span>li>a:hover {
+            color: yellow;
+        }
+
+        .container>footer>.mediaFoot {
+            grid-column: 1/4;
+            grid-row: 2/3;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .container>footer>.mediaFoot>span {
+            display: -webkit-inline-box;
+            color: #444444;
+            font-family: sans-serif;
+            padding: 11px 0px 0px 65px;
+        }
+
+        .container>footer>.mediaFoot>span>img {
+            padding-left: 13px;
+        }
+
+        .container>footer>.mediaFoot>.mediaLinks {
+            display: flex;
+            list-style-type: none;
+            padding: 11px 59px 0px 65px;
+        }
+
+        .container>footer>.mediaFoot>.mediaLinks>li>a {
+            text-decoration: none;
+            color: #c0241f;
+            font-family: sans-serif;
+            padding-left: 15px;
+        }
+
+        .container>footer>.mediaFoot>.mediaLinks>li>a>.download {
+            padding-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <img src="images/bg_topnav.png" alt="in-n-out">
+            <nav>
+                <ul>
+                    <span>
+                        <li><a href="#"><img src="images/topnav_history.png" alt="history"></a></li>
+                    </span>
+                    <span>
+                        <li><a href="#"><img src="images/topnav_foundation_ribbon.png" alt="foundationRibbon"></a></li>
+                    </span>
+                    <span>
+                        <li><a href="#"><img src="images/topnav_downloads.png" alt="downloads"></a></li>
+                    </span>
+                    <span>
+                        <li><a href="#"><img src="images/topnav_contactus.png" alt="contactUs"></a></li>
+                    </span>
+                </ul>
+            </nav>
+            <section>
+                <ul class="inputHolder">
+                    <li><input class="input" type="text" placeholder="Search Site"></li>
+                    <li><a href="#"><img class="goButton" src="images/search_go.png" alt="go"></a></li>
+                </ul>
+            </section>
+        </header>
+        <main>
+            <section class="mainSection">
+                <ul class="viewHolder">
+                    <li><img src="images/currentlyviewing_top.png" alt="currentView"></li>
+                    <span class="locationText">
+                        <li>
+                            <p>Blythe, Ca.</p>
+                        </li>
+                        <a href="#"><img src="images/currentlyviewing_arrow.png" alt="arrowBtn"></a>
+                    </span>
+                    <li><img src="images/currentlyviewing_closed_bottom.png" alt="btmCurrentView"></li>
+                </ul>
+            </section>
+            <nav class="mainNavicon">
+                <ul>
+                    <li><a href="#"><img src="images/mainicon_locationfinder5.png" alt="locations"></a></li>
+                    <li><a href="#"><img src="images/mainicon_foodquality5.png" alt="foodQuality"></a></li>
+                    <li><a href="#"></a><img src="images/mainicon_merchandise5.png" alt="merchandise"></a></li>
+                    <li><a href="#"><img src="images/mainicon_employment5.png" alt="employment"></a></li>
+                    <li><a href="#"><img src="images/mainicon_foundation5.png" alt="foundations"></a></li>
+                </ul>
+            </nav>
+        </main>
+        <footer>
+            <nav class="miscInfo">
+                <ul>
+                    <span>
+                        <li><a href="#">
+                                <p>gift cards</p>
+                            </a></li>
+                    </span>
+                    <span>
+                        <li><a href="#">
+                                <p>nutrition info</p>
+                            </a></li>
+                    </span>
+                    <span>
+                        <li><a href="#">
+                                <p>cookout trailer</p>
+                            </a></li>
+                    </span>
+                </ul>
+            </nav>
+            <nav class="mediaFoot">
+                <span>
+                    <p>&copy;2021 In-N-Out Burgers</p>
+                    <img src="images/fb_icon.png" alt="facebookLogo">
+                </span>
+                <ul class="mediaLinks">
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Associate Link</a></li>
+                    <li><a href="#">Transparency Supply Chain</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms &amp; Conditions</a></li>
+                    <li class="download"><a href="#"><img src="images/download.png" alt="download"></a></li>
+                </ul>
+            </nav>
+        </footer>
+    </div>
+</body>
+
+</html>
